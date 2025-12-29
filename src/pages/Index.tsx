@@ -1,13 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import { Navbar } from '@/components/Navbar';
+import { HeroSection } from '@/components/HeroSection';
+import { AboutSection } from '@/components/AboutSection';
+import { SkillsSection } from '@/components/SkillsSection';
+import { ProjectsSection } from '@/components/ProjectsSection';
+import { CertificationsSection } from '@/components/CertificationsSection';
+import { EducationSection } from '@/components/EducationSection';
+import { ContactSection } from '@/components/ContactSection';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Update page title and meta for SEO
+    document.title = 'Byreddy Pravallika | CSE Student & Full-Stack Developer';
+    
+    // Add meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Portfolio of Byreddy Pravallika - Computer Science & Engineering student at KL University specializing in Full-Stack Development and Cyber Security.');
+    }
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <CertificationsSection />
+      <EducationSection />
+      <ContactSection />
+      <Footer />
+    </main>
   );
 };
 
